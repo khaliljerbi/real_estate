@@ -54,10 +54,15 @@ function App() {
         <HeaderUI />
       </Grid.Row>
       <Grid.Row>
-        <Grid.Column width={4}>
+        <Grid.Column largeScreen={4} widescreen={4} mobile={12}>
           <Stepper step={step} stepsOptions={stepsOptions} />
         </Grid.Column>
-        <Grid.Column width={4} verticalAlign="middle">
+        <Grid.Column
+          largeScreen={4}
+          widescreen={4}
+          mobile={12}
+          verticalAlign="middle"
+        >
           <Segment>
             <StepsContainer
               step={step}
