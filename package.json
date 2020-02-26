@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Khalil Jerbi",
   "license": "MIT",
+  "engines": {
+    "node": "10.x"
+  },
   "scripts": {
     "start": "node .",
     "server": "nodemon .",
