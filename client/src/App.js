@@ -23,8 +23,62 @@ const initialState = {
 function App() {
   const [step, setStep] = useState(0);
   const [formValues, setFormValues] = useState(initialState);
+  const [errors, setErrors] = useState({ ...initialState, nbRooms: "" });
+
+  const handleErrors = (name, value) => {
+    // nbRooms is by default 1
+    if (!value.length && name !== "nbRooms") {
+      setErrors({ ...errors, [name]: "Ce champ est obligatoire!" });
+    } else {
+      setErrors({ ...errors, [name]: "" });
+    }
+  };
+
+  // validate form when submit
+  const validate = () => {
+    let isValid = true;
+    switch (step) {
+      case 0:
+        if (!formValues["price"].length) {
+          setErrors({ ...errors, price: "Ce champ est obligatoire!" });
+          isValid = false;
+        }
+        break;
+      case 1:
+        if (!formValues["surface"].length) {
+          setErrors({ ...errors, surface: "Ce champ est obligatoire!" });
+          isValid = false;
+        }
+        break;
+      case 2:
+        if (!formValues["nbRooms"]) {
+          setErrors({ ...errors, nbRooms: "Ce champ est obligatoire!" });
+          isValid = false;
+        }
+        break;
+      case 3:
+        if (!formValues["type"]) {
+          setErrors({ ...errors, type: "Ce champ est obligatoire!" });
+          isValid = false;
+        }
+        break;
+      case 4:
+        if (!formValues["status"]) {
+          setErrors({ ...errors, status: "Ce champ est obligatoire!" });
+          isValid = false;
+        }
+        break;
+      // default case made to remove error once passed step 4
+      default:
+        isValid = true;
+        break;
+    }
+    return isValid;
+  };
 
   const handleChange = (e, { value, name }) => {
+    // handle errors
+    handleErrors(name, value);
     // for surface & price replace any character with ""
     if (name === "surface" || name === "price") {
       setFormValues({
@@ -66,6 +120,8 @@ function App() {
           <Segment>
             <StepsContainer
               step={step}
+              validate={validate}
+              errors={errors}
               formValues={formValues}
               handleClearData={handleClearData}
               handleChange={handleChange}

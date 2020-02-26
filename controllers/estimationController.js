@@ -1,6 +1,13 @@
+const { validationEstimationInput } = require("../validators/estimation.vld");
+
 // Method POST
 // DESC: handle the estimation process
 exports.handleEstimation = (req, res, next) => {
+  const { error } = validationEstimationInput(req.body);
+  // check for error
+  if (error)
+    res.status(422).send({ success: false, error: error.details[0].message });
+  // calculate estimation
   const { price, status, surface, nbRooms, type } = req.body;
   let estimation = surface * price;
   // testing nbRooms cases

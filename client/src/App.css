@@ -5,7 +5,9 @@
 .space-grid {
   margin-top: "5rem" !important;
 }
-
+.error {
+  color: red;
+}
 .container-center {
   position: absolute;
   left: 50%;
