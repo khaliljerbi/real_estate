@@ -49,9 +49,11 @@ function App() {
   };
 
   return (
-    <div className="container-center">
-      <HeaderUI />
-      <Grid centered>
+    <Grid textAlign="center" verticalAlign="middle">
+      <Grid.Row>
+        <HeaderUI />
+      </Grid.Row>
+      <Grid.Row>
         <Grid.Column width={4}>
           <Stepper step={step} stepsOptions={stepsOptions} />
         </Grid.Column>
@@ -68,9 +70,11 @@ function App() {
             />
           </Segment>
         </Grid.Column>
-      </Grid>
-      <Footer />
-    </div>
+      </Grid.Row>
+      <Grid.Row>
+        <Footer />
+      </Grid.Row>
+    </Grid>
   );
 }
 
