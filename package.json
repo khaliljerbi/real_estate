@@ -1,0 +1,21 @@
+{
+  "name": "real_estate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Khalil Jerbi",
+  "license": "MIT",
+  "scripts": {
+    "start": "node .",
+    "server": "nodemon .",
+    "client": "yarn --cwd ./client start",
+    "dev": "concurrently \"yarn server\" \" yarn client \" "
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.0",
+    "express": "^4.17.1",
+    "concurrently": "^5.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
