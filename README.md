@@ -1,4 +1,3 @@
-
 # Introduction
   Simple real estate application estimation using Node.js Express.js and React.js
 ## Setup
