@@ -1,14 +1,14 @@
 # Introduction
 
-Simple real estate application estimation using Node.js Express.js and React.js
-
-## Setup
-
-To run this project, install it locally using yarn:
+Simple real estate application estimation using Node.js Express.js and React.js.
 
 ## Demo
 
 Open [https://real-estate-estimation.herokuapp.com/] to checkout the demo.
+
+## Setup
+
+To run this project, install it locally using yarn:
 
 ```
 $ cd project_name
