@@ -8,6 +8,8 @@
     "node": "10.x"
   },
   "scripts": {
+    "build": "cd client && yarn build",
+    "install": "cd client && yarn",
     "start": "node .",
     "server": "nodemon .",
     "client": "yarn --cwd ./client start",
